@@ -34,7 +34,6 @@ DEBUG = os.getenv('DEBUG', 'True').lower() in ('true', '1', 'yes', 'on')
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -97,7 +96,11 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 if DATABASE_URL:
     # Parse DATABASE_URL for any database type (PostgreSQL, MySQL, SQLite, etc.)
     DATABASES = {
-        'default': dj_database_url.parse(DATABASE_URL)
+        'default': dj_database_url.parse(
+            DATABASE_URL,
+            conn_max_age=600,
+            ssl_require=not DEBUG,
+        )
     }
 else:
     # Default SQLite for development
@@ -145,9 +148,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles_build'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
+# Include project static dir only if it exists (avoids runtime warnings/crash)
+_project_static = BASE_DIR / 'static'
+STATICFILES_DIRS = [_project_static] if _project_static.exists() else []
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # Default primary key field type
@@ -187,38 +190,45 @@ REST_FRAMEWORK = {
 
 # JWT configuration removed
 
-# Cloudinary Configuration
-import cloudinary
+def _has_cloudinary_creds() -> bool:
+    return all([
+        os.getenv('CLOUDINARY_CLOUD_NAME'),
+        os.getenv('CLOUDINARY_API_KEY'),
+        os.getenv('CLOUDINARY_API_SECRET'),
+    ])
 
-# For django-cloudinary-storage (Django file storage)
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
-}
-
-# For direct Cloudinary SDK usage in views/code
-cloudinary.config(
-    cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME'),
-    api_key=os.getenv('CLOUDINARY_API_KEY'),
-    api_secret=os.getenv('CLOUDINARY_API_SECRET'),
-    secure=True  # Use https
-)
-
-# Media files configuration
 MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+if _has_cloudinary_creds():
+    import cloudinary
+
+    CLOUDINARY_STORAGE = {
+        'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+        'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+        'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+    }
+
+    cloudinary.config(
+        cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME'),
+        api_key=os.getenv('CLOUDINARY_API_KEY'),
+        api_secret=os.getenv('CLOUDINARY_API_SECRET'),
+        secure=True,
+    )
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+else:
+    # Fallback to local storage (suitable for serverless only if not persisting uploads)
+    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+    MEDIA_ROOT = BASE_DIR / 'media'
 
 # CORS Configuration
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React dev server
+    "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "http://localhost:8080",  # Vue dev server
+    "http://localhost:8080",
     "http://127.0.0.1:8080",
-] if DEBUG else []
+]
 
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_ALL_ORIGINS = DEBUG  # Only allow all origins in development
+CORS_ALLOW_ALL_ORIGINS = True  # Only allow all origins in development
 
 # Security settings for production
 if not DEBUG:
@@ -226,12 +236,4 @@ if not DEBUG:
     SECURE_CONTENT_TYPE_NOSNIFF = True
     X_FRAME_OPTIONS = 'DENY'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "https://localhost:3000",
-]
-
-# Allow all Vercel domains during development
-CORS_ALLOWED_ORIGIN_REGEXES = [
-    r"^https://.*\.vercel\.app$",
-]
+CORS_ALLOW_ALL_ORIGINS = True
