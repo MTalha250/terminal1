@@ -33,6 +33,10 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-2(ivrygep2_v=4)!shc
 DEBUG = os.getenv('DEBUG', 'True').lower() in ('true', '1', 'yes', 'on')
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+# Vercel sets the VERCEL env var during runtime. Allow all hosts there, or
+# when explicitly configured via env var.
+if os.getenv('VERCEL'):
+    ALLOWED_HOSTS = ['*']
 
 
 # Application definition

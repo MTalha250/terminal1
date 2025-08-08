@@ -9,3 +9,6 @@ mkdir -p staticfiles_build
 if [ -d "staticfiles" ]; then
   cp -r staticfiles/. staticfiles_build/
 fi
+
+echo "Applying migrations..."
+python3 manage.py migrate --noinput
