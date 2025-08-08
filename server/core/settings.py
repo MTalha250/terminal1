@@ -227,7 +227,6 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*-client\.vercel\.app$"]
 
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_ALL_ORIGINS = False
 
 # CSRF trusted origins for deployed frontends
 CSRF_TRUSTED_ORIGINS = [
@@ -240,4 +239,3 @@ if not DEBUG:
     SECURE_CONTENT_TYPE_NOSNIFF = True
     X_FRAME_OPTIONS = 'DENY'
 
-CORS_ALLOW_ALL_ORIGINS = True
