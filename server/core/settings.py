@@ -146,8 +146,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles_build'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles_build' / 'static'
 # Include project static dir only if it exists (avoids runtime warnings/crash)
 _project_static = BASE_DIR / 'static'
 STATICFILES_DIRS = [_project_static] if _project_static.exists() else []

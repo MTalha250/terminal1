@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}Terminal1{% endblock %}</title>
     {% block extra_css %}{% endblock %}
+    <!-- Unfold static assets -->
+    <link
+      rel="stylesheet"
+      href="{% static 'unfold/css/simplebar/simplebar.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'unfold/fonts/inter/styles.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'unfold/fonts/material-symbols/styles.css' %}"
+    />
   </head>
   <body>
     <header>
@@ -24,6 +38,28 @@
       <p>&copy; 2024 Terminal1. All rights reserved.</p>
     </footer>
 
+    <!-- Unfold JS assets -->
+    <script src="{% static 'unfold/js/alpine/alpine.js' %}" defer></script>
+    <script
+      src="{% static 'unfold/js/alpine/alpine.anchor.js' %}"
+      defer
+    ></script>
+    <script
+      src="{% static 'unfold/js/alpine/alpine.persist.js' %}"
+      defer
+    ></script>
+    <script src="{% static 'unfold/js/alpine/alpine.sort.js' %}" defer></script>
+    <script
+      src="{% static 'unfold/js/alpine/alpine.resize.js' %}"
+      defer
+    ></script>
+    <script src="{% static 'unfold/js/app.js' %}" defer></script>
+    <script src="{% static 'unfold/js/htmx/htmx.js' %}" defer></script>
+    <script src="{% static 'unfold/js/chart/chart.js' %}" defer></script>
+    <script
+      src="{% static 'unfold/js/simplebar/simplebar.js' %}"
+      defer
+    ></script>
     {% block extra_js %}{% endblock %}
   </body>
 </html>
