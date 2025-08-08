@@ -169,9 +169,8 @@ UNFOLD = {
 
 # Django REST Framework Configuration
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
-    ],
+    # No session auth to avoid CSRF requirement for public API endpoints
+    'DEFAULT_AUTHENTICATION_CLASSES': [],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
@@ -187,6 +186,14 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 20,
     'DATETIME_FORMAT': '%Y-%m-%d %H:%M:%S',
 }
+
+# CSRF trusted origins for deployed frontends
+CSRF_TRUSTED_ORIGINS = []
+for key in ['FRONTEND_URL', 'VERCEL_URL']:
+    val = os.getenv(key)
+    if val:
+        host = val.replace('https://', '').replace('http://', '')
+        CSRF_TRUSTED_ORIGINS.append(f'https://{host}')
 
 # JWT configuration removed
 
