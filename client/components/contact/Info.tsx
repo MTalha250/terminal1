@@ -27,16 +27,16 @@ const info = [
 
 const Info = () => {
   return (
-    <div className="bg-secondary py-10 md:py-20 px-8 md:px-16 flex justify-between">
+    <div className="bg-secondary py-10 md:py-20 px-8 md:px-16 flex flex-col md:flex-row  gap-10 justify-between max-w-screen-2xl mx-auto 2xl:px-0">
       {info.map((item) => (
         <div
           className="flex flex-col gap-4 items-center text-white text-center w-full"
           key={item.title}
         >
           {item.icon}
-          <h2 className="text-3xl">{item.title}</h2>
-          <p className="text-lg font-semibold">{item.description}</p>
-          <p>{item.contact}</p>
+          <h2 className="text-xl sm:text-2xl md:text-3xl">{item.title}</h2>
+          <p className="sm:text-lg font-semibold">{item.description}</p>
+          <p className="text-sm sm:text-base">{item.contact}</p>
         </div>
       ))}
     </div>

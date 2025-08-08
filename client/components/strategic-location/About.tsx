@@ -4,18 +4,18 @@ import { GiWindTurbine } from "react-icons/gi";
 
 const About = () => {
   return (
-    <div className="py-10 px-8 md:px-16">
-      <div className="flex gap-10 mb-10">
-        <h1 className="w-2/5 text-4xl tracking-wide">
-          Harnessing Mauritius' Strategic Location for Energy Storage Excellence
+    <div className="py-10 md:py-20 px-8 md:px-16 max-w-screen-2xl mx-auto 2xl:px-0">
+      <div className="flex flex-col md:flex-row gap-10 mb-10">
+        <h1 className="w-full md:w-2/5 text-3xl sm:text-4xl md:text-5xl tracking-wide">
+          Harnessing Mauritius Strategic Location for Energy Storage Excellence
         </h1>
-        <div className="w-3/5">
+        <div className="w-full md:w-3/5">
           <p>
             Mauritius serves as a pivotal maritime crossroads, enhancing global
             trade routes. Terminal One leverages this strategic position to
             provide unparalleled energy storage solutions.
           </p>
-          <div className="flex gap-5 mt-10">
+          <div className="flex flex-col md:flex-row gap-5 mt-5 md:mt-10">
             <div className="flex flex-col gap-4">
               <FaGlobe className="text-4xl" />
               <h2 className="font-bold">Global Connectivity</h2>

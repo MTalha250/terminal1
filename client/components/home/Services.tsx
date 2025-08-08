@@ -28,17 +28,21 @@ const Services = () => {
   ];
 
   return (
-    <div className="py-10 md:py-20 px-8 md:px-16">
-      <h1 className="text-5xl tracking-wide">Our Services</h1>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-10">
+    <div className="py-10 md:py-20 px-8 md:px-16 max-w-screen-2xl mx-auto 2xl:px-0">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl tracking-wide">
+        Our Services
+      </h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-5 md:mt-10">
         {services.map((service) => (
           <div key={service.title} className="flex flex-col gap-3">
             <img
               src={service.img}
               alt={service.title}
-              className="w-full h-60 rounded-md"
+              className="w-full h-40 sm:h-52 xl:h-60 rounded-md"
             />
-            <h2 className="text-2xl text-secondary">{service.title}</h2>
+            <h2 className="text-xl xl:text-2xl text-secondary">
+              {service.title}
+            </h2>
             <p>{service.description}</p>
           </div>
         ))}

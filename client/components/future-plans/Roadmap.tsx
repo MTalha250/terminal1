@@ -29,11 +29,13 @@ const Roadmap = () => {
   ];
 
   return (
-    <div className="py-10 md:py-20 px-8 md:px-16 flex">
-      <div className="w-full md:w-1/2 flex flex-col gap-8 pr-10">
+    <div className="py-10 md:py-20 px-8 md:px-16 flex flex-col gap-10 md:gap-0 md:flex-row max-w-screen-2xl mx-auto 2xl:px-0">
+      <div className="w-full md:w-1/2 flex flex-col gap-4 md:gap-8 md:pr-10">
         <p className="text-black text-lg font-semibold">Expansion</p>
-        <h1 className="text-5xl tracking-wide">Our Roadmap to Future Growth</h1>
-        <p className="text-xl">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl tracking-wide">
+          Our Roadmap to Future Growth
+        </h1>
+        <p className="text-lg sm:text-xl">
           Explore our strategic milestones as we expand our energy storage
           capabilities. Join us on this journey towards sustainable energy
           solutions.
@@ -47,9 +49,13 @@ const Roadmap = () => {
               <div className="h-full w-1 bg-primary"></div>
             </div>
             <div className="flex flex-col gap-4 pb-8">
-              <h2 className="text-primary text-5xl">{item.year}</h2>
-              <h2 className="text-secondary text-3xl">{item.title}</h2>
-              <p className="text-lg max-w-xl">{item.description}</p>
+              <h2 className="text-primary  text-3xl sm:text-4xl md:text-5xl">
+                {item.year}
+              </h2>
+              <h2 className="text-secondary text-xl sm:text-2xl md:text-3xl">
+                {item.title}
+              </h2>
+              <p className="sm:text-lg max-w-xl">{item.description}</p>
             </div>
           </div>
         ))}

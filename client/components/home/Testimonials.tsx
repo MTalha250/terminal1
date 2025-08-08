@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import { Star } from "lucide-react";
 
 const Testimonials = () => {
@@ -39,19 +39,23 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="py-10 px-8 md:px-16">
+    <div className="py-10 px-8 md:px-16 max-w-screen-2xl mx-auto 2xl:px-0">
       <h1 className="text-center text-2xl">Customer Testimonials</h1>
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         navigation={{
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         }}
-        className="mySwiper my-20"
+        className="mySwiper my-10 md:my-20"
       >
         {testimonials.map((testimonial) => (
           <SwiperSlide key={testimonial.id}>
-            <div className="flex flex-col items-center justify-center gap-8 max-w-2xl mx-auto">
+            <div className="flex flex-col items-center justify-center gap-4 md:gap-8 max-w-2xl mx-auto">
               <div className="flex items-center gap-1">
                 {[...Array(testimonial.rating)].map((_, index) => (
                   <Star
@@ -61,7 +65,7 @@ const Testimonials = () => {
                   />
                 ))}
               </div>
-              <p className="text-center text-2xl tracking-wide">
+              <p className="text-center sm:text-lg md:text-xl lg:text-2xl tracking-wide">
                 "{testimonial.review}"
               </p>
               <div className="flex items-center gap-4">
@@ -78,8 +82,10 @@ const Testimonials = () => {
             </div>
           </SwiperSlide>
         ))}
-        <div className="swiper-button-next after:text-white after:!text-base after:w-10 after:h-10 after:absolute after:bg-secondary after:flex after:items-center after:justify-center after:rounded-full" />
-        <div className="swiper-button-prev after:text-white after:!text-base after:w-10 after:h-10 after:absolute after:bg-secondary after:flex after:items-center after:justify-center after:rounded-full" />
+        <div className="hidden md:block">
+          <div className="swiper-button-next after:text-white after:!text-base after:w-10 after:h-10 after:absolute after:bg-secondary after:flex after:items-center after:justify-center after:rounded-full" />
+          <div className="swiper-button-prev after:text-white after:!text-base after:w-10 after:h-10 after:absolute after:bg-secondary after:flex after:items-center after:justify-center after:rounded-full" />
+        </div>
       </Swiper>
     </div>
   );

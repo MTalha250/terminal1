@@ -6,11 +6,11 @@ const Companies = () => {
       <h2 className="text-white text-xl tracking-wide">
         Trusted by top companies worldwide
       </h2>
-      <div className="flex justify-center items-center gap-4 mt-10">
-        <img src="/images/plogo.png" alt="logo" className="w-52" />
-        <img src="/images/plogo.png" alt="logo" className="w-52" />
-        <img src="/images/plogo.png" alt="logo" className="w-52" />
-        <img src="/images/plogo.png" alt="logo" className="w-52" />
+      <div className="flex flex-wrap justify-center items-center gap-4 mt-10">
+        <img src="/images/plogo.png" alt="logo" className="w-36 xl:w-48" />
+        <img src="/images/plogo.png" alt="logo" className="w-36 xl:w-48" />
+        <img src="/images/plogo.png" alt="logo" className="w-36 xl:w-48" />
+        <img src="/images/plogo.png" alt="logo" className="w-36 xl:w-48" />
       </div>
     </div>
   );

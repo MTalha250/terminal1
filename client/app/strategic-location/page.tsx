@@ -13,6 +13,7 @@ const StrategicLocation = () => {
         img="/images/strategic-hero.jpg"
       />
       <About />
+      <hr />
       <Section
         image="/images/strategic-excellence.jpg"
         tagline="Excellence"

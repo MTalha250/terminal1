@@ -60,26 +60,26 @@ const Form = () => {
     }
   };
   return (
-    <div className="py-10 md:py-20 px-8 md:px-16 flex gap-10">
+    <div className="py-10 md:py-20 px-8 md:px-16 flex flex-col md:flex-row gap-10 max-w-screen-2xl mx-auto 2xl:px-0">
       <div className="w-full md:w-1/2">
         <div className="flex flex-col gap-4 max-w-lg">
-          <h1 className="text-5xl tracking-wide">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl tracking-wide">
             Connecting You to Tomorrow's Energy Solutions{" "}
           </h1>
-          <p className="text-xl">
+          <p className="text-lg sm:text-xl">
             We're here to assist you with your inquiries.
           </p>
           <div className="flex flex-col gap-4 mt-10">
             <div className="flex items-center gap-4">
-              <MdOutlineEmail className="text-2xl" />
+              <MdOutlineEmail className="text-2xl shrink-0" />
               <p>info@terminaloneltd.com</p>
             </div>
             <div className="flex items-center gap-4">
-              <MdOutlinePhone className="text-2xl" />
+              <MdOutlinePhone className="text-2xl shrink-0" />
               <p>(230) 5457 6535</p>
             </div>
             <div className="flex items-center gap-4">
-              <MdOutlineLocationOn className="text-2xl" />
+              <MdOutlineLocationOn className="text-2xl shrink-0" />
               <p>
                 Madrassa Lane, Allee Brillant, Castel, Phoenix, Republic of
                 Mauritius
@@ -92,7 +92,7 @@ const Form = () => {
         className="w-full md:w-1/2 flex flex-col gap-4"
         onSubmit={handleSubmit}
       >
-        <div className="flex gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <div className="flex flex-col gap-2 w-full">
             <label htmlFor="firstName" className="font-semibold text-lg">
               First Name
@@ -124,7 +124,7 @@ const Form = () => {
             />
           </div>
         </div>
-        <div className="flex gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <div className="flex flex-col gap-2 w-full">
             <label htmlFor="email" className="font-semibold text-lg">
               Email
@@ -179,7 +179,7 @@ const Form = () => {
         </div>
         <div className="flex flex-col gap-2 w-full">
           <p className="font-semibold text-lg">Which best describes you?</p>
-          <div className="flex gap-4 justify-between max-w-lg">
+          <div className="flex flex-col md:flex-row gap-4 justify-between max-w-lg">
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
                 <input
