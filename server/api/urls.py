@@ -6,4 +6,5 @@ app_name = 'api'
 
 urlpatterns = [
     path('inquiries/', csrf_exempt(views.create_inquiry), name='create_inquiry'),
+    path('diag/', views.diag, name='diag'),
 ]

@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 
 const Footer = () => {
@@ -47,29 +46,29 @@ const Footer = () => {
             <div>
               <ul className="space-y-2 text-blue-100">
                 <li>
-                  <Link href="/about" className="hover:text-white">
+                  <a href="#" className="hover:text-white">
                     About Us
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/services" className="hover:text-white">
+                  <a href="#" className="hover:text-white">
                     Services
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:text-white">
+                  <a href="#" className="hover:text-white">
                     Contact Us
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/careers" className="hover:text-white">
+                  <a href="#" className="hover:text-white">
                     Careers
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/blog" className="hover:text-white">
+                  <a href="#" className="hover:text-white">
                     Blog
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -77,29 +76,29 @@ const Footer = () => {
             <div>
               <ul className="space-y-2 text-blue-100">
                 <li>
-                  <Link href="/faq" className="hover:text-white">
+                  <a href="#" className="hover:text-white">
                     FAQ
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/support" className="hover:text-white">
+                  <a href="#" className="hover:text-white">
                     Support
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/testimonials" className="hover:text-white">
+                  <a href="#" className="hover:text-white">
                     Testimonials
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/privacy" className="hover:text-white">
+                  <a href="#" className="hover:text-white">
                     Privacy Policy
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/terms" className="hover:text-white">
+                  <a href="/terms" className="hover:text-white">
                     Terms of Use
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -111,15 +110,15 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-blue-100">
             <p>© 2025 Terminal One. All rights reserved.</p>
             <div className="flex space-x-6 mt-2 md:mt-0">
-              <Link href="/privacy" className="hover:text-white underline">
+              <a href="#" className="hover:text-white underline">
                 Privacy Policy
-              </Link>
-              <Link href="/terms" className="hover:text-white underline">
+              </a>
+              <a href="#" className="hover:text-white underline">
                 Terms of Service
-              </Link>
-              <Link href="/cookies" className="hover:text-white underline">
+              </a>
+              <a href="#" className="hover:text-white underline">
                 Cookies Settings
-              </Link>
+              </a>
             </div>
           </div>
         </div>
