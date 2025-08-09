@@ -47,7 +47,7 @@ const Form = () => {
     setLoading(true);
     try {
       await axios.post(
-        process.env.NEXT_PUBLIC_API_URL + "/api/inquiries/",
+        `${process.env.NEXT_PUBLIC_API_URL}/api/inquiries/`,
         formData
       );
       toast.success("Inquiry submitted successfully");
