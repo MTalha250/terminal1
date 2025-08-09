@@ -14,7 +14,7 @@ const Home = () => {
         title="We Partner with You for Tomorrow's Energy Solutions"
         description="Strategically located in Port Louis, Mauritius, we provide secure, reliable, and efficient independent storage and marine logistics for diverse petroleum products, upholding the highest standards of safety, compliance, and environmental responsibility."
         image="/images/home-about.jpg"
-        link={{ text: "Learn More", href: "/contact" }}
+        link={{ text: "Learn More", href: "/company" }}
         reverse
       />
       <Services />

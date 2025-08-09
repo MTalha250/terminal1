@@ -29,14 +29,14 @@ const Hero = () => {
           </Link>
         </div>
       </div>
-      <div className="hidden lg:flex absolute bottom-0 left-0 w-full justify-center items-center pb-12 gap-4">
+      {/* <div className="hidden lg:flex absolute bottom-0 left-0 w-full justify-center items-center pb-12 gap-4">
         <img src="/images/plogo.png" alt="logo" className="w-36 xl:w-48" />
         <img src="/images/plogo.png" alt="logo" className="w-36 xl:w-48" />
         <img src="/images/plogo.png" alt="logo" className="w-36 xl:w-48" />
         <img src="/images/plogo.png" alt="logo" className="w-36 xl:w-48" />
         <img src="/images/plogo.png" alt="logo" className="w-36 xl:w-48" />
         <img src="/images/plogo.png" alt="logo" className="w-36 xl:w-48" />
-      </div>
+      </div> */}
     </div>
   );
 };

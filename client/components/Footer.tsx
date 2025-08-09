@@ -1,5 +1,6 @@
 import React from "react";
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -34,41 +35,36 @@ const Footer = () => {
             </div>
 
             {/* Social Media Icons */}
-            <div className="flex space-x-3">
+            {/* <div className="flex space-x-3">
               <Facebook className="w-5 h-5" />
               <Instagram className="w-5 h-5" />
               <Twitter className="w-5 h-5" />
               <Linkedin className="w-5 h-5" />
               <Youtube className="w-5 h-5" />
-            </div>
+            </div> */}
           </div>
           <div className="flex flex-col md:flex-row gap-8 md:gap-16">
             <div>
               <ul className="space-y-2 text-blue-100">
                 <li>
-                  <a href="#" className="hover:text-white">
-                    About Us
-                  </a>
+                  <Link href="/" className="hover:text-white">
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <Link href="/company" className="hover:text-white">
+                    Company
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services" className="hover:text-white">
                     Services
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
-                    Contact Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Blog
-                  </a>
+                  <Link href="/strategic-location" className="hover:text-white">
+                    Strategic Location
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -76,29 +72,24 @@ const Footer = () => {
             <div>
               <ul className="space-y-2 text-blue-100">
                 <li>
-                  <a href="#" className="hover:text-white">
-                    FAQ
-                  </a>
+                  <Link href="/infrastructure" className="hover:text-white">
+                    Infrastructure
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
-                    Support
-                  </a>
+                  <Link href="/clients" className="hover:text-white">
+                    Clients
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
-                    Testimonials
-                  </a>
+                  <Link href="/future-plans" className="hover:text-white">
+                    Future Plans
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="/terms" className="hover:text-white">
-                    Terms of Use
-                  </a>
+                  <Link href="/contact" className="hover:text-white">
+                    Contact Us
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -110,15 +101,18 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-blue-100">
             <p>© 2025 Terminal One. All rights reserved.</p>
             <div className="flex space-x-6 mt-2 md:mt-0">
-              <a href="#" className="hover:text-white underline">
+              <Link
+                href="/privacy-policy"
+                className="hover:text-white underline"
+              >
                 Privacy Policy
-              </a>
-              <a href="#" className="hover:text-white underline">
+              </Link>
+              <Link
+                href="/terms-of-service"
+                className="hover:text-white underline"
+              >
                 Terms of Service
-              </a>
-              <a href="#" className="hover:text-white underline">
-                Cookies Settings
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Services = () => {
@@ -34,7 +35,11 @@ const Services = () => {
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-5 md:mt-10">
         {services.map((service) => (
-          <div key={service.title} className="flex flex-col gap-3">
+          <Link
+            href="/services"
+            key={service.title}
+            className="flex flex-col gap-3 hover:translate-y-[-5px] transition-all duration-300"
+          >
             <img
               src={service.img}
               alt={service.title}
@@ -44,7 +49,7 @@ const Services = () => {
               {service.title}
             </h2>
             <p>{service.description}</p>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
