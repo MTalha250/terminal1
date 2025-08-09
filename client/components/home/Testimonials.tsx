@@ -13,28 +13,28 @@ const Testimonials = () => {
       id: 1,
       rating: 5,
       review:
-        "Working with Terminal One has streamlined our supply chain. Their commitment to excellence is evident in every interaction.",
+        "Terminal One's team delivered on time and with exceptional professionalism. Their storage solutions gave us the reliability we needed.",
       name: "Janet Smith",
-      title: "Manager, Logistics Inc",
+      title: "Operations Manager, Oceanic Fuels",
       image: "/images/t1.jpg",
     },
     {
       id: 2,
       rating: 5,
       review:
-        "Working with Terminal One has streamlined our supply chain. Their commitment to excellence is evident in every interaction.",
-      name: "Janet Smith",
-      title: "Manager, Logistics Inc",
-      image: "/images/t1.jpg",
+        "Their strategic location and responsive coordination significantly improved our bunkering turnaround times.",
+      name: "John Doe",
+      title: "CEO, Meridian Shipping",
+      image: "/images/t2.webp",
     },
     {
       id: 3,
       rating: 5,
       review:
-        "Working with Terminal One has streamlined our supply chain. Their commitment to excellence is evident in every interaction.",
-      name: "Janet Smith",
-      title: "Manager, Logistics Inc",
-      image: "/images/t1.jpg",
+        "The transparency and safety standards at Terminal One set a benchmark. We trust them with our critical storage needs.",
+      name: "Jane Doe",
+      title: "CFO, Atlantic Petro Traders",
+      image: "/images/t3.webp",
     },
   ];
 
