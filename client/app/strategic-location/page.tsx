@@ -9,7 +9,7 @@ const StrategicLocation = () => {
     <div>
       <Hero
         title="Gateway to Growth"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+        subtitle="Terminal One offers unparalleled energy storage solutions tailored for the bunkering industry. Our strategic location in Mauritius enhances accessibility and efficiency for regional and international operations."
         img="/images/strategic-hero.jpg"
       />
       <About />

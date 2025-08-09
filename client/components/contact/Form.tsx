@@ -172,9 +172,10 @@ const Form = () => {
             <option value="" disabled>
               Select one...
             </option>
-            <option value="Service 1">Service 1</option>
-            <option value="Service 2">Service 2</option>
-            <option value="Service 3">Service 3</option>
+            <option value="Bunkering">Bunkering</option>
+            <option value="Energy Storage">Energy Storage</option>
+            <option value="Renewable Energy">Renewable Energy</option>
+            <option value="Other">Other</option>
           </select>
         </div>
         <div className="flex flex-col gap-2 w-full">
